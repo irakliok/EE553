@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -8,32 +9,36 @@ using namespace std;
 	I pledge my honor that I have abided by the Stevens Honor System - I.O.
 */
 
+long double ngons(uint32_t n){
+	long double r = 1;
+
+	for(int i = 3; i <= n; i++){
+			r = r/cos((360.00/(i*2))*M_PI/180.00);
+	}
+	return r;
+}
+
 int main(){
-	float  sum1F = 0, sum2F = 0;
-	double sum1D = 0, sum2D = 0;
-	
-	cout << setprecision(8);
-	
-	for(float i = 1; i <= 100; i++){
-		sum1F += 1/i;
-	}
-	cout << "sum1F = " << sum1F << ", ";
-	for(float i = 100; i >= 1; i--){
-		sum2F += 1/i;
-	}
-	cout << "sum2F = " << sum2F << "\n";
-	
-	for(double i = 1; i < 100; i++){
-		sum1F += 1/i;
-	}
-	cout << "sum1D = " << sum1F << ", ";
-	for(double i = 100; i >= 1; i--){
-		sum2F += 1/i;
-	}
-	cout << "sum2D = " << sum2F << "\n";
-	
-	cout << "sum1F - sum2F = " << sum1F - sum2F << "\n";
-	cout << "sum1D - sum2D = " << sum1D - sum2D << "\n";
-	
+	/*
+	uint32_t x = 0;
+	cout << "Enter n for nth circle: ";
+	cin >> x; 
+	cout << '\n' << "The radius of number " << x << " circle is: " << ngons(x) << ".";
+	*/
+
+	cout << cos((360.00/(2*2))*M_PI/180.00) << '\n';
+	cout << setprecision(10);
+	cout << M_PI << '\n';
+	cout << '\n' << "n = 3" << '\t' << '\t' << "Radius = " << ngons(3);
+	cout << '\n' << "n = 5" << '\t' << '\t' << "Radius = " << ngons(5);
+	cout << '\n' << "n = 7" << '\t' << '\t' << "Radius = " << ngons(7);
+	cout << '\n' << "n = 9" << '\t' << '\t' << "Radius = " << ngons(9);
+
+	cout << '\n' << "n = 10" << '\t' << '\t' << "Radius = " << ngons(10);
+	cout << '\n' << "n = 100" << '\t' << '\t' << "Radius = " << ngons(100);
+	cout << '\n' << "n = 1000" << '\t' << "Radius = " << ngons(1000);
+	cout << '\n' << "n = 10000" << '\t' << "Radius = " << ngons(10000);
+	cout << '\n' << "n = 100000" << '\t' << "Radius = " << ngons(100000);
+	cout << '\n' << "n = 1000000" << '\t' << "Radius = " << ngons(1000000);
 	return 0;
 }
