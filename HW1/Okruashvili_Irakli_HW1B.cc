@@ -25,15 +25,7 @@ int main(){
 	cin >> x; 
 	cout << '\n' << "The radius of number " << x << " circle is: " << ngons(x) << ".";
 	*/
-
-	cout << cos((360.00/(2*2))*M_PI/180.00) << '\n';
-	cout << setprecision(10);
-	cout << M_PI << '\n';
-	cout << '\n' << "n = 3" << '\t' << '\t' << "Radius = " << ngons(3);
-	cout << '\n' << "n = 5" << '\t' << '\t' << "Radius = " << ngons(5);
-	cout << '\n' << "n = 7" << '\t' << '\t' << "Radius = " << ngons(7);
-	cout << '\n' << "n = 9" << '\t' << '\t' << "Radius = " << ngons(9);
-
+	cout << setprecision(12);
 	cout << '\n' << "n = 10" << '\t' << '\t' << "Radius = " << ngons(10);
 	cout << '\n' << "n = 100" << '\t' << '\t' << "Radius = " << ngons(100);
 	cout << '\n' << "n = 1000" << '\t' << "Radius = " << ngons(1000);
